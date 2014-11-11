@@ -14,3 +14,22 @@
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
 </template>
+
+<template name="patientList">
+  {{> esInput index="patients" placeholder="Search..." }}
+
+  <table class="table table-striped">
+  <thead><th>Name</th></thead>
+  <tbody>
+  {{#esEach index="patients"}}
+      <tr>
+        <td>{{name}}</td>
+      </tr>
+  {{/esEach}}
+  </tbody>
+  </table>
+
+  {{#ifEsHasNoResults index="patients"}}
+      <div class="no-results">No results found!</div>
+  {{/ifEsHasNoResults}}
+</template>

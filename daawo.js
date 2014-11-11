@@ -1,4 +1,19 @@
-Patients = new Mongo.Collection('patients')
+Patients = new Mongo.Collection('patients');
+
+var Schemas = {};
+
+Schemas.Patient = new SimpleSchema({
+    name: {
+        type: String
+    },
+    birthDate: {
+        type: Date
+    }
+});
+
+Patients.attachSchema(Schemas.Patient);
+
+Patients.initEasySearch(['name'], {'limit' : 20});
 
 if (Meteor.isClient) {
   // counter starts at 0
@@ -46,4 +61,9 @@ Router.route('/', function () {
 Router.route('userAdmin', {
     path:'/admin/users',
     template: 'accountsAdmin'
+});
+
+Router.route('patientList', {
+    path:'/patients',
+    data: function () { return {patients: Patients.find()} }
 });

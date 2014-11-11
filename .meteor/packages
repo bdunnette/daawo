@@ -14,4 +14,7 @@ ian:bootstrap-3
 mrt:accounts-admin-ui-bootstrap-3
 accounts-password
 force-ssl
+aldeed:collection2
+aldeed:simple-schema
+matteodem:easy-search
 
