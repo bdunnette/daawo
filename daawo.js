@@ -39,6 +39,8 @@ Router.route('/', function () {
   this.render('hello', {
     data: function () { return {patients: Patients.find()} }
   });
+}, {
+  name: 'hello'
 });
 
 Router.route('admin', {
