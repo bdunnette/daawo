@@ -43,7 +43,7 @@ Router.route('/', function () {
   name: 'hello'
 });
 
-Router.route('admin', {
-    path:'/admin',
+Router.route('userAdmin', {
+    path:'/admin/users',
     template: 'accountsAdmin'
 });
